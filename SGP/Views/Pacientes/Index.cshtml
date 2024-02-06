@@ -1,0 +1,46 @@
+﻿@model List<SGP.Core.Application.ViewModels.Pacientes.PacienteViewModel>
+@{
+    ViewData["Title"] = "Pacientes";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-controller="Pacientes" asp-action="CreatePaciente" class="btn btn-success btn-lg">Agregar Paciente</a>
+</div>
+
+<h1 class="text-primary font-weight-bold">Pacientes</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h2>No hay pacientes agregados.</h2>
+        }
+        else
+        {
+            @foreach (SGP.Core.Application.ViewModels.Pacientes.PacienteViewModel paciente in Model)
+            {
+                <div class="card my-3 mx-4" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="@paciente.FotoUrl" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@paciente.Nombre @paciente.Apellido</h5>
+                                <p class="card-text"><span class="fw-bold">Teléfono:</span> @paciente.Telefono</p>
+                                <p class="card-text"><span class="fw-bold">Dirección:</span> @paciente.Direccion</p>
+                                <p class="card-text"><span class="fw-bold">Fecha de Nacimiento:</span> @paciente.FechaNacimiento</p>
+                                <p class="card-text"><span class="fw-bold">Cédula:</span> @paciente.Cedula</p>
+                                <p class="card-text"><span class="fw-bold">Fuma:</span> @(paciente.Fuma ? "Si" : "No")</p>
+                                <p class="card-text"><span class="fw-bold">Alergías:</span> @(paciente.Alergias ? "Si" : "No")</p>
+                                <a asp-controller="Pacientes" asp-action="EditPaciente" asp-route-IdPaciente="@paciente.IdPaciente" class="btn btn-warning">Editar</a>
+                                <a asp-controller="Pacientes" asp-action="DeletePaciente" asp-route-IdPaciente="@paciente.IdPaciente" class="btn btn-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

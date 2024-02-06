@@ -1,0 +1,19 @@
+﻿@model SGP.Core.Application.ViewModels.Usuarios.SaveUsuarioViewModel
+@{
+    ViewData["Title"] = "Eliminar Usuario";
+}
+
+<h1 class="text-primary font-weight-bold">Eliminar Usuario</h1>
+<hr />
+
+<form method="post" asp-controller="Usuarios" asp-action="DeleteUsuarioPost">
+    <div>
+        <p class="">¿Estas seguro de que deseas eliminar a "<span style="font-weight:bold">@Model.NombreUsuario</span>" del listado de <span class="text-decoration-underline">usuarios</span>?</p>
+
+        <input type="hidden" asp-for="IdUsuario" />
+        <hr />
+
+        <button type="submit" class="btn btn-primary">Borrar</button>
+        <a asp-controller="Usuarios" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+    </div>
+</form>

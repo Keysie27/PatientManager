@@ -1,0 +1,29 @@
+﻿@model SGP.Core.Application.ViewModels.Citas.ConsultarCitaViewModel
+@{
+    ViewData["Title"] = "Consultar Cita";
+}
+
+<h1 class="text-primary font-weight-bold">Consultar Cita:</h1>
+<hr />
+<form method="post" asp-controller="Citas" asp-action="ConsultarCita">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="IdPruebaLab" class="form-label" style="font-weight:500">Prueba de laboratorio:</label>
+            <select class="form-select" asp-for="IdPruebaLab">
+                <option selected value="0">Seleccione una prueba de laboratorio</option>
+                @if (Model.PruebasLab != null)
+                {
+                    @foreach (var pruebaLab in Model.PruebasLab)
+                    {
+                        <option value="@pruebaLab.IdPruebaLab">@pruebaLab.Nombre</option>
+                    }
+                }
+            </select>
+            <span asp-validation-for="IdPruebaLab" class="form-text text-danger"></span>
+        </div>
+    </div>
+    <input type="hidden" asp-for="IdPaciente" />
+    <hr />
+    <button type="submit" class="btn btn-primary">Realizar pruebas</button>
+    <a asp-controller="Citas" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+</form>

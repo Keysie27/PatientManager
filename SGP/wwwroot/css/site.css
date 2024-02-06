@@ -1,0 +1,76 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+main, header {
+    font-size: 1.2em;
+}
+
+h1.text-primary {
+    color: #337dab !important;
+}
+
+.card img {
+    width: 100%;
+    height: 12em;
+}
+
+.pagina {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.nav-item {
+    margin-left: .5em;
+}
+
+.btn-warning {
+    background-color: #ede647;
+}
+
+.btn-warning:hover {
+    background-color: #d1cb3f;
+}
+
+.btn-outline-warning {
+    color: #ede647;
+}
+
+.btn-outline-warning:hover {
+    background-color: #d1cb3f;
+}
+
+.btn-danger {
+    background-color: #d1643f;
+}
+
+.btn-danger:hover {
+    background-color: #ab5233;
+}
+
+.btn-outline-danger {
+    color: #d1643f;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ab5233;
+}

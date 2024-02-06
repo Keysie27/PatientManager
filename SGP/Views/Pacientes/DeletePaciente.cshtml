@@ -1,0 +1,19 @@
+﻿@model SGP.Core.Application.ViewModels.Pacientes.SavePacienteViewModel
+@{
+    ViewData["Title"] = "Eliminar Paciente";
+}
+
+<h1 class="text-primary font-weight-bold">Eliminar Paciente</h1>
+<hr />
+
+<form method="post" asp-controller="Pacientes" asp-action="DeletePacientePost">
+    <div>
+        <p class="">¿Estas seguro de que deseas eliminar a "<span style="font-weight:bold">@Model.Nombre @Model.Apellido</span>" del listado de <span class="text-decoration-underline">pacientes</span>?</p>
+
+        <input type="hidden" asp-for="IdPaciente" />
+        <hr />
+
+        <button type="submit" class="btn btn-primary">Borrar</button>
+        <a asp-controller="Pacientes" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+    </div>
+</form>

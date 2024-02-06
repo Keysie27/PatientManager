@@ -1,0 +1,69 @@
+﻿@model List<SGP.Core.Application.ViewModels.Citas.CitaViewModel>
+@{
+    ViewData["Title"] = "Citas";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-controller="Citas" asp-action="CreateCita" class="btn btn-success btn-lg">Agregar Cita</a>
+</div>
+
+<h1 class="text-primary font-weight-bold">Citas</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h2>No hay citas agregadas.</h2>
+        }
+        else
+        {
+            <table class="table table-striped table-bordered text-lg">
+                <thead class="bg-dark">
+                    <tr>
+                        <th scope="col" class="text-white">Paciente</th>
+                        <th scope="col" class="text-white">Médico</th>
+                        <th scope="col" class="text-white">Fecha</th>
+                        <th scope="col" class="text-white">Hora</th>
+                        <th scope="col" class="text-white">Causa</th>
+                        <th scope="col" class="text-white">Estado</th>
+                        <th scope="col" class="text-white">Opciones</th>
+                        <th scope="col" class="text-white">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SGP.Core.Application.ViewModels.Citas.CitaViewModel cita in Model)
+                    {
+                        <tr>
+                            <td>@cita.Paciente.Nombre @cita.Paciente.Apellido</td>
+                            <td>@cita.Medico.Nombre @cita.Medico.Apellido</td>
+                            <td>@cita.Fecha</td>
+                            <td>@cita.Hora</td>
+                            <td>@cita.Causa</td>
+                            <td>@cita.Estado</td>
+                            <td>
+                                @switch (@cita.Estado)
+                                {
+                                    case "Pend. de consulta":
+                                        <a asp-controller="Citas" asp-action="ConsultarCita" asp-route-IdPaciente="@cita.IdPaciente" class="btn btn-primary">Consultar</a>
+                                        break;
+
+                                    case "Pend. de resultados":
+                                        <a asp-controller="Citas" asp-action="ConsultarResultados" asp-route-IdPaciente="@cita.IdPaciente" class="btn btn-primary">Consultar resultados</a>
+                                        break;
+
+                                    case "Completada":
+                                        break;
+                                }
+                            </td>
+                            <td>
+                                <a asp-controller="Citas" asp-action="EditCita" asp-route-IdCita="@cita.IdCita" class="btn btn-warning">Editar</a>
+                                <a asp-controller="Citas" asp-action="DeleteCita" asp-route-IdCita="@cita.IdCita" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

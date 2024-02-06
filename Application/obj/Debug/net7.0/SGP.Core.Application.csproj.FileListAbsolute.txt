@@ -1,0 +1,15 @@
+C:\Users\rusbe\source\repos\SGP\Application\bin\Debug\net7.0\SGP.Core.Application.deps.json
+C:\Users\rusbe\source\repos\SGP\Application\bin\Debug\net7.0\SGP.Core.Application.dll
+C:\Users\rusbe\source\repos\SGP\Application\bin\Debug\net7.0\SGP.Core.Application.pdb
+C:\Users\rusbe\source\repos\SGP\Application\bin\Debug\net7.0\SGP.Core.Domain.dll
+C:\Users\rusbe\source\repos\SGP\Application\bin\Debug\net7.0\SGP.Core.Domain.pdb
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.csproj.AssemblyReference.cache
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.AssemblyInfoInputs.cache
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.AssemblyInfo.cs
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.csproj.CoreCompileInputs.cache
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.csproj.CopyComplete
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.dll
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\refint\SGP.Core.Application.dll
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\SGP.Core.Application.pdb
+C:\Users\rusbe\source\repos\SGP\Application\obj\Debug\net7.0\ref\SGP.Core.Application.dll

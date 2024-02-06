@@ -1,0 +1,43 @@
+﻿@model List<SGP.Core.Application.ViewModels.PruebaLab.PruebaLabViewModel>
+@{
+    ViewData["Title"] = "PruebasLab";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-controller="PruebasLab" asp-action="CreatePruebaLab" class="btn btn-success btn-lg">Agregar Prueba de Laboratorio</a>
+</div>
+
+<h1 class="text-primary font-weight-bold">Pruebas de Laboratorio</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h2>No hay pruebas de laboratorio agregadas.</h2>
+        }
+        else
+        {
+            <table class="table table-striped table-bordered text-lg">
+                <thead class="bg-dark">
+                    <tr>
+                        <th scope="col" class="text-white">Prueba de Laboratorio</th>
+                        <th scope="col" class="text-white">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SGP.Core.Application.ViewModels.PruebaLab.PruebaLabViewModel pruebaLab in Model)
+                    {
+                        <tr>
+                            <td>@pruebaLab.Nombre</td>
+                            <td>
+                                <a asp-controller="PruebasLab" asp-action="EditPruebaLab" asp-route-IdPruebaLab="@pruebaLab.IdPruebaLab" class="btn btn-warning">Editar</a>
+                                <a asp-controller="PruebasLab" asp-action="DeletePruebaLab" asp-route-IdPruebaLab="@pruebaLab.IdPruebaLab" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

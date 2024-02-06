@@ -1,0 +1,23 @@
+﻿@model SGP.Core.Application.ViewModels.ResultadoLab.SaveResultadoLabViewModel
+@{
+    ViewData["Title"] = "Reportar Resultados";
+}
+
+<h1 class="text-primary font-weight-bold">Resultados de Prueba de Laboratorio:</h1>
+<hr />
+<form method="post" asp-controller="ResultadosLab" asp-action="ReportarResultados">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="Resultado" class="form-label" style="font-weight:500">Resultado:</label>
+            <input required type="text" class="form-control" asp-for="Resultado" minlength="5" maxlength="100">
+            <span asp-validation-for="Resultado" class="form-text text-danger"></span>
+        </div>
+    </div>    
+    <input type="hidden" asp-for="IdResultadoLab" />
+    <input type="hidden" asp-for="Estado" />
+    <input type="hidden" asp-for="IdPaciente" />
+    <input type="hidden" asp-for="IdPruebaLab" />
+    <hr />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-controller="ResultadosLab" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+</form>

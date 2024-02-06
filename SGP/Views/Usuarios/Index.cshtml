@@ -1,0 +1,51 @@
+﻿@model List<SGP.Core.Application.ViewModels.Usuarios.UsuarioViewModel>
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-controller="Usuarios" asp-action="CreateUsuario" class="btn btn-success btn-lg">Agregar Usuario</a>
+</div>
+
+<h1 class="text-primary font-weight-bold">Usuarios</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h2>No hay usuarios agregados.</h2>
+        }
+        else
+        {
+            <table class="table table-striped table-bordered text-lg">
+                <thead class="bg-dark">
+                    <tr>
+                        <th scope="col" class="text-white">Nombre</th>
+                        <th scope="col" class="text-white">Apellido</th>
+                        <th scope="col" class="text-white">Usuario</th>
+                        <th scope="col" class="text-white">Correo</th>
+                        <th scope="col" class="text-white">Tipo de Usuario</th>
+                        <th scope="col" class="text-white">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SGP.Core.Application.ViewModels.Usuarios.UsuarioViewModel usuario in Model)
+                    {
+                        <tr>
+                            <td>@usuario.Nombre</td>
+                            <td>@usuario.Apellido</td>
+                            <td>@usuario.NombreUsuario</td>
+                            <td>@usuario.Correo</td>
+                            <td>@usuario.TipoUsuario</td>
+                            <td>
+                                <a asp-controller="Usuarios" asp-action="EditUsuario" asp-route-IdUsuario="@usuario.IdUsuario" class="btn btn-warning">Editar</a>
+                                <a asp-controller="Usuarios" asp-action="DeleteUsuario" asp-route-IdUsuario="@usuario.IdUsuario" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

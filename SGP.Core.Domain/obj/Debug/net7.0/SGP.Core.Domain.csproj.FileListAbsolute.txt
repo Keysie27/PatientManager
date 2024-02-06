@@ -1,0 +1,11 @@
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\bin\Debug\net7.0\SGP.Core.Domain.deps.json
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\bin\Debug\net7.0\SGP.Core.Domain.dll
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\bin\Debug\net7.0\SGP.Core.Domain.pdb
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\SGP.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\SGP.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\SGP.Core.Domain.AssemblyInfo.cs
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\SGP.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\SGP.Core.Domain.dll
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\refint\SGP.Core.Domain.dll
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\SGP.Core.Domain.pdb
+C:\Users\rusbe\source\repos\SGP\SGP.Core.Domain\obj\Debug\net7.0\ref\SGP.Core.Domain.dll

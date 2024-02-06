@@ -1,0 +1,43 @@
+﻿@model List<SGP.Core.Application.ViewModels.Medicos.MedicoViewModel>
+@{
+    ViewData["Title"] = "Médicos";
+}
+
+<div class="d-flex justify-content-center">
+    <a asp-controller="Medicos" asp-action="CreateMedico" class="btn btn-success btn-lg">Agregar Médico</a>
+</div>
+
+<h1 class="text-primary font-weight-bold">Médicos</h1>
+<hr />
+
+<div class="container">
+    <div class="row">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h2>No hay médicos agregados.</h2>
+        }
+        else
+        {
+            @foreach (SGP.Core.Application.ViewModels.Medicos.MedicoViewModel medico in Model)
+            {
+                <div class="card my-3 mx-4" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="@medico.FotoUrl" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@medico.Nombre @medico.Apellido</h5>
+                                <p class="card-text"><span class="fw-bold">Teléfono:</span> @medico.Telefono</p>
+                                <p class="card-text"><span class="fw-bold">Cédula:</span> @medico.Cedula</p>
+                                <p class="card-text"><small class="text-body-secondary font-italic">@medico.Correo</small></p>
+                                <a asp-controller="Medicos" asp-action="EditMedico" asp-route-IdMedico="@medico.IdMedico" class="btn btn-warning">Editar</a>
+                                <a asp-controller="Medicos" asp-action="DeleteMedico" asp-route-IdMedico="@medico.IdMedico" class="btn btn-danger">Eliminar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>

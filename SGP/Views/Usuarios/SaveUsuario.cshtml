@@ -1,0 +1,54 @@
+﻿@model SGP.Core.Application.ViewModels.Usuarios.SaveUsuarioViewModel
+@{
+    bool editMode = Model.IdUsuario == 0 ? false : true;
+    ViewData["Title"] = "Save Usuario";
+}
+
+<h1 class="text-primary font-weight-bold">@(editMode ? "Modificar Usuario:" : "Añadir Usuario:")</h1>
+<hr />
+<form method="post" asp-controller="Usuarios" asp-action="@(editMode ? "EditUsuario" : "CreateUsuario")">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="Nombre" class="form-label" style="font-weight:500">Nombre:</label>
+            <input type="text" class="form-control" asp-for="Nombre" minlength="3" maxlength="50">
+            <span asp-validation-for="Nombre" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Apellido" class="form-label" style="font-weight:500">Apellido:</label>
+            <input type="text" class="form-control" asp-for="Apellido" minlength="3" maxlength="100">
+            <span asp-validation-for="Apellido" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="NombreUsuario" class="form-label" style="font-weight:500">Usuario:</label>
+            <input type="text" class="form-control" asp-for="NombreUsuario" minlength="5" maxlength="30">
+            <span asp-validation-for="NombreUsuario" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Correo" class="form-label" style="font-weight:500">Correo electrónico:</label>
+            <input type="email" class="form-control" asp-for="Correo" maxlength="450">
+            <span asp-validation-for="Correo" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Contraseña" class="form-label" style="font-weight:500">Contraseña:</label>
+            <input type="password" class="form-control" asp-for="Contraseña" minlength="6" maxlength="30">
+            <span asp-validation-for="Contraseña" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="ConfirmarContraseña" class="form-label" style="font-weight:500">Confirmar contraseña:</label>
+            <input type="password" class="form-control" asp-for="ConfirmarContraseña" minlength="6" maxlength="30">
+            <span asp-validation-for="ConfirmarContraseña" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="TipoUsuario" class="form-label" style="font-weight:500">Tipo de usuario:</label>
+            <select class="form-select" asp-for="TipoUsuario">
+                <option selected value="Asistente">Asistente</option>
+                <option value="Administrador">Administrador</option>
+            </select>
+            <span asp-validation-for="TipoUsuario" class="form-text text-danger"></span>
+        </div>
+    <input type="hidden" asp-for="IdUsuario" />
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-controller="Usuarios" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+</form>

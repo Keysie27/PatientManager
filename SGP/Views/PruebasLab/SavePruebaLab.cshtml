@@ -1,0 +1,21 @@
+﻿@model SGP.Core.Application.ViewModels.PruebaLab.SavePruebaLabViewModel
+@{
+    bool editMode = Model.IdPruebaLab == 0 ? false : true;
+    ViewData["Title"] = "Save PruebaLab";
+}
+
+<h1 class="text-primary font-weight-bold">@(editMode ? "Modificar Prueba de Laboratorio:" : "Añadir Prueba de Laboratorio:")</h1>
+<hr />
+<form method="post" asp-controller="PruebasLab" asp-action="@(editMode ? "EditPruebaLab" : "CreatePruebaLab")">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="Nombre" class="form-label" style="font-weight:500">Nombre de la prueba:</label>
+            <input type="text" class="form-control" asp-for="Nombre" minlength="5" maxlength="100">
+            <span asp-validation-for="Nombre" class="form-text text-danger"></span>
+        </div>
+    <input type="hidden" asp-for="IdPruebaLab" />
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-controller="PruebasLab" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+</form>

@@ -1,0 +1,19 @@
+﻿@model SGP.Core.Application.ViewModels.PruebaLab.SavePruebaLabViewModel
+@{
+    ViewData["Title"] = "Eliminar PruebaLab";
+}
+
+<h1 class="text-primary font-weight-bold">Eliminar Prueba de Laboratorio</h1>
+<hr />
+
+<form method="post" asp-controller="PruebasLab" asp-action="DeletePruebaLabPost">
+    <div>
+        <p class="">¿Estas seguro de que deseas eliminar a "<span style="font-weight:bold">@Model.Nombre</span>" del listado de <span class="text-decoration-underline">pruebas de laboratorio</span>?</p>
+
+        <input type="hidden" asp-for="IdPruebaLab" />
+        <hr />
+
+        <button type="submit" class="btn btn-primary">Borrar</button>
+        <a asp-controller="PruebasLab" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+    </div>
+</form>

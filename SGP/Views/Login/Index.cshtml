@@ -1,0 +1,22 @@
+﻿@model SGP.Core.Application.ViewModels.Usuarios.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1 class="text-primary font-weight-bold">Login</h1>
+<hr />
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<form method="post" asp-controller="Login" asp-action="Index">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="NombreUsuario" class="form-label" style="font-weight:500">Usuario:</label>
+            <input type="text" class="form-control" asp-for="NombreUsuario" minlength="3" maxlength="50">
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Contraseña" class="form-label" style="font-weight:500">Contraseña:</label>
+            <input type="password" class="form-control" asp-for="Contraseña" minlength="3" maxlength="100">
+        </div>
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+</form>

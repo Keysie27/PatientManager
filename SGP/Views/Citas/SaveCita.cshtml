@@ -1,0 +1,77 @@
+﻿@model SGP.Core.Application.ViewModels.Citas.SaveCitaViewModel
+@{
+    bool editMode = Model.IdCita == 0 ? false : true;
+    ViewData["Title"] = "Save Cita";
+}
+
+<h1 class="text-primary font-weight-bold">@(editMode ? "Modificar Cita:" : "Añadir Cita:")</h1>
+<hr />
+<form method="post" asp-controller="Citas" asp-action="@(editMode ? "EditCita" : "CreateCita")">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="Fecha" class="form-label" style="font-weight:500">Fecha:</label>
+            <input type="date" class="form-control" asp-for="Fecha">
+            <span asp-validation-for="Fecha" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Hora" class="form-label" style="font-weight:500">Hora:</label>
+            <input type="time" class="form-control" asp-for="Hora">
+            <span asp-validation-for="Hora" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Causa">Causa</label>
+            <textarea class="form-control" asp-for="Causa" minlength="10" maxlength="200" style="height: 100px"></textarea>
+            <span asp-validation-for="Causa" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="IdPaciente" class="form-label" style="font-weight:500">Paciente:</label>
+            <select class="form-select" asp-for="IdPaciente">
+                <option selected value="0">Seleccione un paciente</option>
+                @if (Model.Pacientes != null)
+                {
+                    @foreach (var paciente in Model.Pacientes)
+                    {
+                        @if (editMode == true && paciente.IdPaciente == Model.IdPaciente)
+                        {
+                            <option selected value="@paciente.IdPaciente">@paciente.Nombre @paciente.Apellido (@paciente.Cedula)</option>
+                        }
+                        else
+                        {
+                            <option value="@paciente.IdPaciente">@paciente.Nombre @paciente.Apellido (@paciente.Cedula)</option>
+                        }
+                    }
+                }
+            </select>
+            <span asp-validation-for="IdPaciente" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="IdMedico" class="form-label" style="font-weight:500">Médico:</label>
+            <select class="form-select" asp-for="IdMedico">
+                <option selected value="0">Seleccione un paciente</option>
+                @if (Model.Medicos != null)
+                {
+                    @foreach (var medico in Model.Medicos)
+                    {
+                        @if (editMode == true && medico.IdMedico == Model.IdMedico)
+                        {
+                            <option selected value="@medico.IdMedico">@medico.Nombre @medico.Apellido (@medico.Cedula)</option>
+                        }
+                        else
+                        {
+                            <option value="@medico.IdMedico">@medico.Nombre @medico.Apellido (@medico.Cedula)</option>
+                        }
+                    }
+                }
+            </select>
+            <span asp-validation-for="IdMedico" class="form-text text-danger"></span>
+        </div>
+    <input type="hidden" asp-for="IdCita" />
+    @if (editMode)
+        {
+            <input type="hidden" asp-for="Estado" />
+        }
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-controller="Citas" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+</form>

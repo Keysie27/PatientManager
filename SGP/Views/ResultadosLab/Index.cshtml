@@ -1,0 +1,44 @@
+﻿@model List<SGP.Core.Application.ViewModels.ResultadoLab.ResultadoLabViewModel>
+@{
+    ViewData["Title"] = "ResultadosLab";
+}
+
+<h1 class="text-primary font-weight-bold">Resultados de Laboratorio</h1>
+<hr />
+<div class="container">
+    <div class="row">
+        @if (Model == null || Model.Count == 0)
+        {
+            <h2>No hay resultados de laboratorio agregados.</h2>
+        }
+        else
+        {
+            <table class="table table-striped table-bordered text-lg">
+                <thead class="bg-dark">
+                    <tr>
+                        <th scope="col" class="text-white">Paciente</th>
+                        <th scope="col" class="text-white">Cédula</th>
+                        <th scope="col" class="text-white">Prueba de Laboratorio</th>
+                        <th scope="col" class="text-white">Reportar resultados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (SGP.Core.Application.ViewModels.ResultadoLab.ResultadoLabViewModel resultadoLab in Model)
+                    {
+                        if (resultadoLab.Estado == "Pendiente")
+                        {
+                            <tr>
+                                <td>@resultadoLab.Paciente.Nombre @resultadoLab.Paciente.Apellido</td>
+                                <td>@resultadoLab.Paciente.Cedula</td>
+                                <td>@resultadoLab.PruebaLab.Nombre</td>
+                                <td>
+                                    <a asp-controller="ResultadosLab" asp-action="ReportarResultados" asp-route-IdResultadoLab="@resultadoLab.IdResultadoLab" class="btn btn-warning">Reportar</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

@@ -1,0 +1,17 @@
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Infrastructure.Persistence.deps.json
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Infrastructure.Persistence.dll
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Infrastructure.Persistence.pdb
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Core.Application.dll
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Core.Domain.dll
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Core.Application.pdb
+C:\Users\rusbe\source\repos\SGP\Database\bin\Debug\net7.0\SGP.Core.Domain.pdb
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.csproj.AssemblyReference.cache
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.AssemblyInfoInputs.cache
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.AssemblyInfo.cs
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.csproj.CopyComplete
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.dll
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\refint\SGP.Infrastructure.Persistence.dll
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\SGP.Infrastructure.Persistence.pdb
+C:\Users\rusbe\source\repos\SGP\Database\obj\Debug\net7.0\ref\SGP.Infrastructure.Persistence.dll

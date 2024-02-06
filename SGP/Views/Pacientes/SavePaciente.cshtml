@@ -1,0 +1,73 @@
+﻿@model SGP.Core.Application.ViewModels.Pacientes.SavePacienteViewModel
+@{
+    bool editMode = Model.IdPaciente == 0 ? false : true;
+    ViewData["Title"] = "Save Paciente";
+}
+
+<h1 class="text-primary font-weight-bold">@(editMode ? "Modificar Paciente:" : "Añadir Paciente:")</h1>
+<hr />
+<form method="post" asp-controller="Pacientes" asp-action="@(editMode ? "EditPaciente" : "CreatePaciente")" enctype="multipart/form-data">
+    <div class="row">
+        <div class="mb-3 col-4">
+            <label asp-for="Nombre" class="form-label" style="font-weight:500">Nombre:</label>
+            <input type="text" class="form-control" asp-for="Nombre" minlength="3" maxlength="50">
+            <span asp-validation-for="Nombre" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Apellido" class="form-label" style="font-weight:500">Apellido:</label>
+            <input type="text" class="form-control" asp-for="Apellido" minlength="3" maxlength="100">
+            <span asp-validation-for="Apellido" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Telefono" class="form-label" style="font-weight:500">Teléfono:</label>
+            <input type="text" class="form-control" asp-for="Telefono" minlength="10">
+            <span asp-validation-for="Telefono" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Direccion" class="form-label" style="font-weight:500">Dirección:</label>
+            <input type="text" class="form-control" asp-for="Direccion" maxlength="150">
+            <span asp-validation-for="Direccion" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="FechaNacimiento" class="form-label" style="font-weight:500">Fecha de nacimiento:</label>
+            <input type="date" class="form-control" asp-for="FechaNacimiento">
+            <span asp-validation-for="FechaNacimiento" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Cedula" class="form-label" style="font-weight:500">Cédula:</label>
+            <input type="text" class="form-control" asp-for="Cedula" minlength="10" maxlength="15">
+            <span asp-validation-for="Cedula" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="File" class="form-label" style="font-weight:500">Foto:</label>
+            @if (editMode)
+            {
+                <input type="file" accept="image/jpeg, image/png, image/jpg" class="form-control" asp-for="File">
+            } else
+            {
+                <input type="file" required accept="image/jpeg, image/png, image/jpg" class="form-control" asp-for="File">
+            }
+            <span asp-validation-for="File" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Fuma" class="form-label" style="font-weight:500">Fuma:</label>
+            <select class="form-select" asp-for="Fuma">
+                <option selected value="False">No</option>
+                <option value="True">Si</option>
+            </select>
+            <span asp-validation-for="Fuma" class="form-text text-danger"></span>
+        </div>
+        <div class="mb-3 col-4">
+            <label asp-for="Alergias" class="form-label" style="font-weight:500">Alergias:</label>
+            <select class="form-select" asp-for="Alergias">
+                <option selected value="False">No</option>
+                <option value="True">Si</option>
+            </select>
+            <span asp-validation-for="Alergias" class="form-text text-danger"></span>
+        </div>
+    <input type="hidden" asp-for="IdPaciente" />
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-controller="Pacientes" asp-action="Index" class="btn btn-success">Volver Atrás</a>
+</form>
